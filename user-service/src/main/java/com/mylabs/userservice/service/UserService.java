@@ -30,7 +30,7 @@ public class UserService {
 	public User saveUser(User user) {
 		return userRepository.save(user);
 	}
-
+	
 	public ResponseVO getUserandProducts(int userId) {
 		ResponseVO responseVo = new ResponseVO();
 		User user = userRepository.findByUserId(userId);

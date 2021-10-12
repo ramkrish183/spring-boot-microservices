@@ -50,8 +50,9 @@ public class ProductController {
 
 	@GetMapping("/{id}")
 	@ResponseBody
-	public Product findByProductId(@PathVariable("id") Long productId) {
+	public Product findByProductId(@PathVariable("id") Long productId) throws InterruptedException {
 		System.out.println("Request to find "+productId);
+		Thread.sleep(5000*productId);
 		Product out= productservice.findByProductId(productId);
 		return out;
 	}
